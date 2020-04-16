@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-sandboxvwa-dev-170520-authRole",
+            "UnauthRoleArn": "arn:aws:iam::191846745499:role/amplify-sandboxvwa-dev-170520-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::191846745499:role/amplify-sandboxvwa-dev-170520-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-sandboxvwa-dev-170520-deployment",
+            "UnauthRoleName": "amplify-sandboxvwa-dev-170520-unauthRole",
+            "StackName": "amplify-sandboxvwa-dev-170520",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:191846745499:stack/amplify-sandboxvwa-dev-170520/12069500-7fb9-11ea-a6be-0e08659c816c",
+            "AmplifyAppId": "d1cdgsh1km4hrj"
+        },
+        "categories": {
+            "auth": {
+                "cognito6a7fb35a": {}
+            }
+        }
+    }
+}
