@@ -2,7 +2,10 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <Home/>
-    <v-btn small @click="testAPI">Normal</v-btn>
+    <hr>
+    <v-btn small @click="testAPI">test API</v-btn>
+    <br>
+    <v-btn small @click="getEvents">get events</v-btn>
   </div>
 </template>
 
@@ -56,7 +59,7 @@ export default {
       });
     },
     /**
-     * APIキック
+     * APIキックテスト
      */
     testAPI() {
       console.log("kick api");
@@ -71,8 +74,28 @@ export default {
           // }
       }
       API.get(apiName, path, myInit).then(response => {
+          console.log(1);
           console.log(response);
       }).catch(error => {
+          console.log(2);
+          console.log(error.response)
+      });
+    },
+    /**
+     * イベント一覧取得
+     */
+    getEvents() {
+      let apiName = 'sandboxVWAAPI';
+      let path = '/events/:name'; 
+      let myInit = { 
+          headers: {}, 
+          response: true,
+      }
+      API.get(apiName, path, myInit).then(response => {
+          console.log(1);
+          console.log(response);
+      }).catch(error => {
+          console.log(2);
           console.log(error.response)
       });
     }

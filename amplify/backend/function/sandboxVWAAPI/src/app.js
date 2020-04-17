@@ -77,15 +77,17 @@ app.get(path + hashKeyPath, function(req, res) {
 
   let queryParams = {
     TableName: tableName,
-    KeyConditions: condition
+    // KeyConditions: condition
   }
 
-  dynamodb.query(queryParams, (err, data) => {
+  // 全件取得なのでqueryメソッドではなくscanメソッドを使用。この場合は KeyConditions は不要
+  dynamodb.scan(queryParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
       res.json({error: 'Could not load items: ' + err});
     } else {
-      res.json(data.Items);
+      res.json(data);
+      // res.json(data.Items);
     }
   });
 });
@@ -133,6 +135,14 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
       }
     }
   });
+});
+
+/*****************************************
+ * HTTP Get method for fujimori original
+ *****************************************/
+
+app.get(path, function(req, res) {
+  res.json({"test": "test"});
 });
 
 

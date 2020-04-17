@@ -76,7 +76,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-sandboxvwa-dev-170520-deployment",
-					"S3Key": "amplify-builds/sandboxVWAAPI-36576d6b396d482f5575-build.zip"
+					"S3Key": "amplify-builds/sandboxVWAAPI-7a3768715a632b63636e-build.zip"
 				}
 			}
 		},
