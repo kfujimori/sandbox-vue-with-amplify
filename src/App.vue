@@ -1,18 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Home/>
-    <hr>
-    <v-btn small @click="testAPI">test API</v-btn>
-    <br>
-    <v-btn small @click="getEvents">get events</v-btn>
-  </div>
+  <v-app>
+
+    <v-navigation-drawer app v-model="drawer">
+      <v-list nav dense>
+        <v-list-item-group>
+          <v-list-item>
+            <v-list-item-title @click="onHome">HOME</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>
+        Sample Vue Project
+      </v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <Home/>
+      <APITest/>
+    </v-content>
+
+    <v-footer app>
+      <v-card-title>
+        <v-btn fab small class="mx-2 color:white" href="https://twitter.com/fujimohige">
+          <v-icon>mdi-twitter</v-icon>
+        </v-btn>
+        <v-btn fab small class="mx-2 color:white" href="https://www.facebook.com/profile.php?id=100002070586479">
+          <v-icon>mdi-facebook</v-icon>
+        </v-btn>
+        <v-btn fab small class="mx-2 color:white" href="https://www.instagram.com/kenichifujimori/?hl=ja">
+          <v-icon>mdi-instagram</v-icon>
+        </v-btn>
+      </v-card-title>
+      <v-card-text>
+        <p>Copyright © Sample Vue Project</p>
+      </v-card-text>
+    </v-footer>
+
+  </v-app>
 </template>
 
 <script>
 import Home from './components/Home.vue'
+import APITest from './components/APITest.vue'
 
-import Amplify, { API, Auth } from 'aws-amplify';
+import {Amplify, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
 Amplify.configure(awsconfig);
@@ -20,12 +55,24 @@ Amplify.configure(awsconfig);
 export default {
   name: 'App',
   components: {
-    Home
+    Home,
+    APITest,
   }
   ,mounted: async function(){
     this.login();
   }
+  ,data: ()=> ({
+    drawer: false,
+  })
   ,methods: {
+    /**
+     * ナビバー制御
+     */
+    onHome() {
+      if(this.$route.path != '/') {
+        this.$router.push({path: '/'});
+      }
+    },
     /**
      * 認証
      */
@@ -58,47 +105,6 @@ export default {
         console.log(err);
       });
     },
-    /**
-     * APIキックテスト
-     */
-    testAPI() {
-      console.log("kick api");
-
-      let apiName = 'sandboxVWAAPI';
-      let path = '/events'; 
-      let myInit = { 
-          headers: {}, 
-          response: true,
-          // queryStringParameters: {
-          //     name: 'param'
-          // }
-      }
-      API.get(apiName, path, myInit).then(response => {
-          console.log(1);
-          console.log(response);
-      }).catch(error => {
-          console.log(2);
-          console.log(error.response)
-      });
-    },
-    /**
-     * イベント一覧取得
-     */
-    getEvents() {
-      let apiName = 'sandboxVWAAPI';
-      let path = '/events/:name'; 
-      let myInit = { 
-          headers: {}, 
-          response: true,
-      }
-      API.get(apiName, path, myInit).then(response => {
-          console.log(1);
-          console.log(response);
-      }).catch(error => {
-          console.log(2);
-          console.log(error.response)
-      });
-    }
   }
 }
 </script>
