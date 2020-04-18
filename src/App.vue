@@ -14,7 +14,7 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
-        Sample Vue Project
+        <a href="/">Sample Vue Project</a>
       </v-toolbar-title>
     </v-app-bar>
 
@@ -89,19 +89,19 @@ export default {
           data.completeNewPasswordChallenge(loginpw, {}, 
             {
               onSuccess(result) {
-                console.log("onSuccess");
+                console.info("onSuccess");
                 console.log(result);
               },
               onfailure(err) {
-                console.log("onfailure");
+                console.error("onfailure");
                 console.log(err);
               }
             }
           );
         }
-        console.log("login successfuly.");
+        console.info("login successfuly.");
       }).catch((err) => {
-        console.log("login failed.");
+        console.error("login failed.");
         console.log(err);
       });
     },
@@ -117,5 +117,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.v-application a{
+  text-decoration: none;
 }
 </style>
