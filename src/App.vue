@@ -5,7 +5,13 @@
       <v-list nav dense>
         <v-list-item-group>
           <v-list-item>
-            <v-list-item-title @click="onHome">HOME</v-list-item-title>
+            <v-list-item-title @click="goTo('/')">HOME</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/about')">ABOUT</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/apitest')">API TEST</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -19,8 +25,7 @@
     </v-app-bar>
 
     <v-content>
-      <Home/>
-      <APITest/>
+      <router-view/>
     </v-content>
 
     <v-footer app>
@@ -44,9 +49,6 @@
 </template>
 
 <script>
-import Home from './components/Home.vue'
-import APITest from './components/APITest.vue'
-
 import {Amplify, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
@@ -55,8 +57,6 @@ Amplify.configure(awsconfig);
 export default {
   name: 'App',
   components: {
-    Home,
-    APITest,
   }
   ,mounted: async function(){
     this.login();
@@ -68,9 +68,9 @@ export default {
     /**
      * ナビバー制御
      */
-    onHome() {
-      if(this.$route.path != '/') {
-        this.$router.push({path: '/'});
+    goTo(path) {
+      if(this.$route.path !== path) {
+        this.$router.push({path: path});
       }
     },
     /**

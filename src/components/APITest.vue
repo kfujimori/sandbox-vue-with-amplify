@@ -1,9 +1,7 @@
 <template>
 <div id="api-test">
-  <hr>
   <v-btn small @click="testAPI">test API</v-btn>
   <v-btn small @click="getEvents">get events</v-btn>
-  <hr>
 </div>
 </template>
 
