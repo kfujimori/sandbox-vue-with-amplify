@@ -13,6 +13,9 @@
           <v-list-item>
             <v-list-item-title @click="goTo('/apitest')">API TEST</v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/sample')">Vue SAMPLE</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
