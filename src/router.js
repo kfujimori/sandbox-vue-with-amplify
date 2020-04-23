@@ -4,6 +4,7 @@ import Home from './views/Home'
 import About from './views/About'
 import APITest from './views/APITest'
 import Sample from './views/Sample'
+import StudyDirective from './views/StudyDirective'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/sample',
       name: 'sample',
       component: Sample
-    }
+    },
+    {
+      path: '/studydirective',
+      name: 'studydirective',
+      component: StudyDirective
+    },
   ]
 })

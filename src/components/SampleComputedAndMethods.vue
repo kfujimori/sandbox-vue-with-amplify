@@ -1,6 +1,6 @@
 <template>
   <div id="sample-computed-and-methods">
-    <p>sample of Computed and Methods</p>
+    <h2>sample of Computed and Methods</h2>
     <form>
       <v-btn small @click="onclick">click</v-btn>
     </form>

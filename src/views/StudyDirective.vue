@@ -1,22 +1,20 @@
 <template> 
   <div>
     <div class="sample-block">
-      <SampleComputedAndMethods /> 
-    </div>
-    <div class="sample-block">
-      <LifeCycle /> 
+      <DirectiveOfEvents /> 
+      <DirectiveOfForm /> 
     </div>
   </div>
 </template> 
 
 <script> 
-import SampleComputedAndMethods from '../components/SampleComputedAndMethods'
-import LifeCycle from '../components/LifeCycle'
+import DirectiveOfEvents from '../components/DirectiveOfEvents'
+import DirectiveOfForm from '../components/DirectiveOfForm.vue'
 
 export default { 
   components: { 
-    SampleComputedAndMethods ,
-    LifeCycle
+    DirectiveOfEvents,
+    DirectiveOfForm,
   } 
 } 
 </script> 

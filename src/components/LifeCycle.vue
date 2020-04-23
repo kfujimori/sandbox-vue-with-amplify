@@ -1,6 +1,6 @@
 <template>
   <div id="life-cycle">
-    <p>sample of life cycle</p>
+    <h2>sample of life cycle</h2>
     now: {{this.current.toLocaleString()}}
     <v-form>
       <v-text-field

@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <p>{{ this.msg }}</p>
+    <h2>{{ this.msg }}</h2>
   </div>
 </template>
 
