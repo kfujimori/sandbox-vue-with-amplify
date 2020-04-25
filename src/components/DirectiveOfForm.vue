@@ -158,6 +158,31 @@
       </v-form>
     </div>
 
+    <div class="block">
+      two-way binding not with v-model
+      <v-textarea
+        outlined
+        label="EMail"
+        name="name"
+        v-model="emails"
+      ></v-textarea>
+
+      two-way binding with v-model
+      <v-textarea
+        outlined
+        label="EMail"
+        name="name"
+        v-bind:value="this.emails"
+        @change="splitEMails($event)"
+      ></v-textarea>
+
+      {{this.emails}}
+      <ul><li v-for="email in this.emails.split(';')" :key="email">
+          {{email}}
+      </li></ul>
+
+    </div>
+
 
   </div>
 </template>
@@ -176,7 +201,8 @@ export default {
     itms: null,
     upfiles: [],
     temperature: 0,
-    lname: ""
+    lname: "",
+    emails: ""
   })
   ,computed: {
     inputRules: function() {
@@ -215,6 +241,9 @@ export default {
     },
     inputTextChanged: function() {
       console.log(this.temperature);
+    },
+    splitEMails: function(e) {
+      this.emails = e;
     }
   }
 }
