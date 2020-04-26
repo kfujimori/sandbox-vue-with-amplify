@@ -5,6 +5,7 @@
       <DirectiveOfForm /> 
       <DirectiveOfControl /> 
       <DirectiveOfDataBinding /> 
+      <DirectiveOfAdvancedEvent /> 
     </div>
   </div>
 </template> 
@@ -14,6 +15,7 @@ import DirectiveOfEvents from '../components/DirectiveOfEvents'
 import DirectiveOfForm from '../components/DirectiveOfForm.vue'
 import DirectiveOfControl from '../components/DirectiveOfControl.vue'
 import DirectiveOfDataBinding from '../components/DirectiveOfDataBinding.vue'
+import DirectiveOfAdvancedEvent from '../components/DirectiveOfAdvancedEvent.vue'
 
 export default { 
   components: { 
@@ -21,6 +23,7 @@ export default {
     DirectiveOfForm,
     DirectiveOfControl,
     DirectiveOfDataBinding,
+    DirectiveOfAdvancedEvent,
   } 
 } 
 </script> 
