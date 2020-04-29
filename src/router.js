@@ -5,6 +5,7 @@ import About from './views/About'
 import APITest from './views/APITest'
 import Sample from './views/Sample'
 import StudyDirective from './views/StudyDirective'
+import StudyComponents from './views/StudyComponents'
 
 Vue.use(Router)
 
@@ -36,5 +37,10 @@ export default new Router({
       name: 'studydirective',
       component: StudyDirective
     },
-  ]
+    {
+      path: '/studycomponents',
+      name: 'studycomponents',
+      component: StudyComponents
+    },
+]
 })

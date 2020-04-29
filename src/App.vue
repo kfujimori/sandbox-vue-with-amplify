@@ -19,6 +19,9 @@
           <v-list-item>
             <v-list-item-title @click="goTo('/studydirective')">Study Vue directive</v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/StudyComponents')">Study Vue components</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
