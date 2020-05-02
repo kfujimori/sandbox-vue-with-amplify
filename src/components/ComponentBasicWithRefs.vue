@@ -1,5 +1,6 @@
 <template>
   <div id="ComponentBasicChild3">
+    <hr>
     <h3>This is child with refs.</h3>
     <v-container grid-list-xs>
       <v-form>

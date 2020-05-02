@@ -12,20 +12,16 @@
       </v-form>
     </v-container>
 
-    <h2>Study Vue components(Child(binding))</h2>
     <ChildLayer v-model="model.testData"></ChildLayer>
 
-    <h2>Study Vue components(Child(non binding))</h2>
     <ChildLayer></ChildLayer>
     
-    <h2>Study Vue components(Child(Multi parameters))</h2>
     <ChildLayer2
       :param1="param1" @update:param1="param1 = $event"
       :param2="param2"
       :param3="param3" @hoge="v => fuga(v)"
     ></ChildLayer2>
 
-    <h2>Study Vue components(Child with refs)</h2>
     <ChildLayer3
       ref="fromChild"
     ></ChildLayer3>
@@ -36,6 +32,30 @@
       </v-form>
     </v-container>
 
+    <ChildLayer4>Suzuki-san</ChildLayer4>
+    <ChildLayer4>
+      <span>This is not a template １.</span>
+      <template v-slot:h>
+          <h3>Hi, slot!!!</h3>
+      </template>
+      <template #f>
+          Do you understand slot?
+      </template>
+      <span>This is not a template 2.</span>
+      <span>This is not a template either.</span>
+    </ChildLayer4>
+
+    <ChildLayer5>
+      <template v-slot:ScopedSlot>aaaaa</template>
+      <template #ScopedSlot="hoge">
+        Book title : {{hoge.book.title}} (\{{hoge.book.price}})
+      </template>
+    </ChildLayer5>
+
+    <ChildLayer5>
+      <template v-slot:ScopedSlot></template>
+    </ChildLayer5>
+
   </div>
 </template>
 
@@ -44,6 +64,8 @@
 import ChildLayer from "./ComponentBasicChild"
 import ChildLayer2 from "./ComponentBasicChild2"
 import ChildLayer3 from "./ComponentBasicWithRefs"
+import ChildLayer4 from "./ComponentBasicWithSlot"
+import ChildLayer5 from "./ComponentBasicWithScopedSlot"
 
 export default {
   name: 'ParentLayer',
@@ -51,6 +73,8 @@ export default {
     ChildLayer,
     ChildLayer2,
     ChildLayer3,
+    ChildLayer4,
+    ChildLayer5,
   },
   data() {
     return {

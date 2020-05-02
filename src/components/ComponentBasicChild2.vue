@@ -1,5 +1,6 @@
 <template>
   <div id="ComponentBasicChild２">
+    <hr>
     <h3>This is child 2.</h3>
     <v-container grid-list-xs>
       <v-form>

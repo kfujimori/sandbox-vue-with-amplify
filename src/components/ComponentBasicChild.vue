@@ -1,5 +1,6 @@
 <template>
   <div id="ComponentBasicChild">
+    <hr>
     <h3>This is child.</h3>
     <p>Child-value:{{ value }}</p>
     <v-container grid-list-xs>
