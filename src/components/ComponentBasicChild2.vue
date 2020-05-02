@@ -1,6 +1,6 @@
 <template>
-  <div id="ComponentBasicChild">
-    <h3>This is child.</h3>
+  <div id="ComponentBasicChild２">
+    <h3>This is child 2.</h3>
     <v-container grid-list-xs>
       <v-form>
         <v-text-field id="ChildInput1" v-model="param1GetSet"                           name="param1" label="param1"></v-text-field>

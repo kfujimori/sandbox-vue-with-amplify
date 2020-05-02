@@ -24,7 +24,18 @@
       :param2="param2"
       :param3="param3" @hoge="v => fuga(v)"
     ></ChildLayer2>
-    
+
+    <h2>Study Vue components(Child with refs)</h2>
+    <ChildLayer3
+      ref="fromChild"
+    ></ChildLayer3>
+    <v-container grid-list-xs>
+      <v-form>
+        <v-btn color="info" @click="callChild">call child from parent with refs</v-btn>
+        <label>parent side message : </label>{{message}}
+      </v-form>
+    </v-container>
+
   </div>
 </template>
 
@@ -32,12 +43,14 @@
 
 import ChildLayer from "./ComponentBasicChild"
 import ChildLayer2 from "./ComponentBasicChild2"
+import ChildLayer3 from "./ComponentBasicWithRefs"
 
 export default {
   name: 'ParentLayer',
   components: {
     ChildLayer,
     ChildLayer2,
+    ChildLayer3,
   },
   data() {
     return {
@@ -46,13 +59,17 @@ export default {
       },
       param1:"p1",
       param2:"2",
-      param3:"aaaaaa"
+      param3:"aaaaaa",
+      message: '',
     }
   },
   methods: {
     fuga(v) {
       console.log(`parent: v = ${v}`);
       this.param3 = v;
+    },
+    callChild() {
+      this.$refs.fromChild.message = "from parent!!!"
     }
   }
 }
