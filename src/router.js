@@ -6,6 +6,7 @@ import APITest from './views/APITest'
 import Sample from './views/Sample'
 import StudyDirective from './views/StudyDirective'
 import StudyComponents from './views/StudyComponents'
+import StudyDynamicComponents from './views/StudyDynamicComponents'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/studycomponents',
       name: 'studycomponents',
       component: StudyComponents
+    },
+    {
+      path: '/studydynamiccomponents',
+      name: 'studydynamiccomponents',
+      component: StudyDynamicComponents
     },
 ]
 })
