@@ -7,6 +7,7 @@ import Sample from './views/Sample'
 import StudyDirective from './views/StudyDirective'
 import StudyComponents from './views/StudyComponents'
 import StudyDynamicComponents from './views/StudyDynamicComponents'
+import StudyAnimation from './views/StudyAnimation'
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/studydynamiccomponents',
       name: 'studydynamiccomponents',
       component: StudyDynamicComponents
+    },
+    {
+      path: '/studyanimation',
+      name: 'studyanimation',
+      component: StudyAnimation
     },
 ]
 })

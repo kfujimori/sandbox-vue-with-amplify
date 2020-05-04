@@ -17,9 +17,9 @@
     </v-container>
 
     <v-container grid-list-xs>
-      <v-tabs centered>
+      <v-tabs class="tab" dark grow centered>
         <v-tab v-for="content in components" :key="content">
-          <a href="#" @click.prevent="tabClick(content)"> {{content}}</a>
+          <span class="tabBlock" @click.prevent="tabClick(content)"> {{content}}</span>
         </v-tab>
       </v-tabs>
       <keep-alive :max="5" include="['DCBannerMember', 'DCBannerNew']">
@@ -77,4 +77,13 @@ export default {
 </script>
 
 <style>
+  div.v-tab {
+    padding: 0;
+  }
+  .tabBlock {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    /* border: 1px solid #aaa; */
+  }
 </style>
