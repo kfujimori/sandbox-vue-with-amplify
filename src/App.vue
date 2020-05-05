@@ -28,6 +28,12 @@
           <v-list-item>
             <v-list-item-title @click="goTo('/studyanimation')">Study Animation</v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/studycreatingparts')">Study Creating Parts</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/sttudyfilters')">Study Filters</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -42,6 +48,7 @@
     <v-content>
       <router-view/>
     </v-content>
+    
 
     <v-footer app>
       <v-card-title>
@@ -78,6 +85,8 @@ export default {
   }
   ,data: ()=> ({
     drawer: false,
+    color: '#eea',
+    aaa: "hoge",
   })
   ,methods: {
     /**

@@ -8,6 +8,8 @@ import StudyDirective from './views/StudyDirective'
 import StudyComponents from './views/StudyComponents'
 import StudyDynamicComponents from './views/StudyDynamicComponents'
 import StudyAnimation from './views/StudyAnimation'
+import StudyCreatingParts from './views/StudyCreatingParts'
+import StudyFilters from './views/StudyFilters'
 
 Vue.use(Router)
 
@@ -53,6 +55,16 @@ export default new Router({
       path: '/studyanimation',
       name: 'studyanimation',
       component: StudyAnimation
+    },
+    {
+      path: '/studycreatingparts',
+      name: 'studycreatingparts',
+      component: StudyCreatingParts
+    },
+    {
+      path: '/studyfilters',
+      name: 'studyfilters',
+      component: StudyFilters
     },
 ]
 })
