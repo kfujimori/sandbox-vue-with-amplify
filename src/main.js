@@ -11,10 +11,3 @@ new Vue({
   router,
   render: h => h(App),
 }).$mount('#app')
-
-// Vue.filter('trim', function(v) {
-//   if(typeof v !== "string") {
-//     return v;
-//   }
-//   return v.trim();
-// })

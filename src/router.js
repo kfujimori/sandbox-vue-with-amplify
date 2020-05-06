@@ -10,6 +10,7 @@ import StudyDynamicComponents from './views/StudyDynamicComponents'
 import StudyAnimation from './views/StudyAnimation'
 import StudyCreatingParts from './views/StudyCreatingParts'
 import StudyFilters from './views/StudyFilters'
+import StudyMixins from './views/StudyMixins'
 
 Vue.use(Router)
 
@@ -65,6 +66,16 @@ export default new Router({
       path: '/studyfilters',
       name: 'studyfilters',
       component: StudyFilters
+    },
+    {
+      path: '/studyfilters',
+      name: 'studyfilters',
+      component: StudyFilters
+    },
+    {
+      path: '/studymixins',
+      name: 'studymixins',
+      component: StudyMixins
     },
 ]
 })
