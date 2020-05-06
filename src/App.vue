@@ -32,7 +32,7 @@
             <v-list-item-title @click="goTo('/studycreatingparts')">Study Creating Parts</v-list-item-title>
           </v-list-item>
           <v-list-item>
-            <v-list-item-title @click="goTo('/sttudyfilters')">Study Filters</v-list-item-title>
+            <v-list-item-title @click="goTo('/studyfilters')">Study Filters</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
