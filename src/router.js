@@ -11,6 +11,8 @@ import StudyAnimation from './views/StudyAnimation'
 import StudyCreatingParts from './views/StudyCreatingParts'
 import StudyFilters from './views/StudyFilters'
 import StudyMixins from './views/StudyMixins'
+import StudyRouter from './views/StudyRouter'
+import Article from './components/Article'
 
 Vue.use(Router)
 
@@ -68,14 +70,43 @@ export default new Router({
       component: StudyFilters
     },
     {
-      path: '/studyfilters',
-      name: 'studyfilters',
-      component: StudyFilters
-    },
-    {
       path: '/studymixins',
       name: 'studymixins',
       component: StudyMixins
     },
+    {
+      path: '/studyrouter',
+      name: 'studyrouter',
+      component: StudyRouter
+    },
+    {
+      path: '/article/:id',
+      name: 'article',
+      component: Article
+    },
+    {
+      path     : '/article/useprops/:idp',
+      name     : 'article',
+      component: Article,
+      // props    :true,
+      props    : routes => ({
+        idp: Number(routes.params.idp)
+      })
+    },
+    {
+      path       : '/studyrouter/multiview',
+      name       : 'multiview',
+      component  : StudyRouter,
+      props : () => (
+        console.log(1111)
+      ),
+      children   : [
+        {
+          path      : 'children',
+          name      : 'children',
+          component : StudyMixins,
+        }
+      ]
+    }
 ]
 })

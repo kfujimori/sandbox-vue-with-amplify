@@ -37,6 +37,9 @@
           <v-list-item>
             <v-list-item-title @click="goTo('/studymixins')">Study Mixins</v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/studyrouter')">Study Router</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
