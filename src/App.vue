@@ -40,6 +40,9 @@
           <v-list-item>
             <v-list-item-title @click="goTo('/studyrouter')">Study Router</v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title @click="goTo('/studystore')">Study Store</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -52,7 +55,9 @@
     </v-app-bar>
 
     <v-content>
-      <router-view/>
+      <transition>
+        <router-view/>
+      </transition>
     </v-content>
     
 
@@ -151,4 +156,16 @@ export default {
 .v-application a{
   text-decoration: none;
 }
+
+  .v-enter-active .v-leave-active {
+    transition: opacity 2s;
+  }
+  .v-enter .v-leave-to {
+    opacity: 0.0;
+  }
+  .v-enter-to .v-leave {
+    opacity: 1.0;
+  }
+
+
 </style>

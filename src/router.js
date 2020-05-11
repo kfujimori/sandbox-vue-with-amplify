@@ -13,6 +13,7 @@ import StudyFilters from './views/StudyFilters'
 import StudyMixins from './views/StudyMixins'
 import StudyRouter from './views/StudyRouter'
 import Article from './components/Article'
+import StudyStore from './views/StudyStore'
 
 Vue.use(Router)
 
@@ -107,6 +108,11 @@ export default new Router({
           component : StudyMixins,
         }
       ]
-    }
-]
+    },
+    {
+      path: '/studystore',
+      name: 'studystore',
+      component: StudyStore
+    },
+  ]
 })
