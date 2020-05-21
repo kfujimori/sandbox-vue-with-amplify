@@ -46,7 +46,7 @@
                 <v-text-field hide-details="false"  class="mt-0" name="title" label="TITLE" v-model="book.title" id="title"></v-text-field>
                 <v-text-field                       class="mt-0" name="price" label="PRICE" v-model.number="book.price" id="price" :rules="priceRules"></v-text-field>
                 <v-btn type="submit" color="info" dark>Sync submit!</v-btn>
-                <v-btn type="submit" @click="asyncAddBook" color="info" dark>Async submit!</v-btn>
+                <v-btn type="button" @click="asyncAddBook" color="info" dark>Async submit!</v-btn>
               </v-Form>
             </v-card-actions>
           </v-col>
@@ -105,7 +105,13 @@ export default {
       })
     },
     asyncAddBook() {
-      this.$store.dispatch('addAsync', {book: this.book})
+      this.$store.dispatch('addAsync', {book:
+        {
+          isbn: this.book.isbn,
+          title: this.book.title,
+          price: this.book.price,
+        }
+      })
     }
   },
 } 
